@@ -1,9 +1,17 @@
 {
-  "name": "your-project-dir-name",
+  "name": "alias-register",
   "version": "0.1.0",
-  "types": "./dist/types/index.d.ts",
-  "main": "./dist/lib/index.js",
-  "module": "./dist/es/index.js",
+  "module": "./register.mjs",
+  "files": [
+    "register.mjs",
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./register.mjs",
+    "./esm": "./dist/esm/index.mjs",
+    "./cjs": "./dist/cjs/index.js"
+  },
   "scripts": {
     "prepare": "modern build && husky install",
     "dev": "modern dev",
@@ -29,13 +37,14 @@
     "node_modules/",
     "dist/"
   ],
-  "dependencies": {},
-  "peerDependencies": {},
+  "dependencies": {
+    "oxc-resolver": "^1.6.1"
+  },
   "devDependencies": {
     "@modern-js/module-tools": "2.48.0",
     "@modern-js/eslint-config": "2.48.0",
-    "typescript": "~5.0.4",
-    "@types/node": "~16.11.7",
+    "typescript": "5.4.2",
+    "@types/node": "^20.9.4",
     "rimraf": "~3.0.2",
     "lint-staged": "~13.1.0",
     "prettier": "~2.8.1",
