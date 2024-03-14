@@ -1,16 +1,26 @@
 {
   "name": "alias-register",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "module": "./register.mjs",
   "files": [
     "register.mjs",
+    "esm-register.mjs",
+    "cjs-register.js",
     "dist",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sooniter/alias-register.git"
+  },
+  "author": {
+    "name": "sooniter",
+    "email": "sooniter@gmail.com"
+  },
   "exports": {
     ".": "./register.mjs",
-    "./esm": "./dist/esm/index.mjs",
-    "./cjs": "./dist/cjs/index.js"
+    "./esm": "./esm-register.mjs",
+    "./cjs": "./cjs-register.js"
   },
   "scripts": {
     "prepare": "modern build && husky install",

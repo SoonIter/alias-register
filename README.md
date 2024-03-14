@@ -1,46 +1,48 @@
-# Modern.js Package
+# alias-register
 
-## Setup
-
-Install the dependencies:
-
-```bash
-pnpm run install
-```
+<a href="https://www.npmjs.com/package/alias-register"><img src="https://img.shields.io/npm/v/alias-register.svg?sanitize=true" alt="Version"></a>
 
 ## Get Started
 
-Run and debug the module:
+```js
+// alias.config.cjs
+const path = require('path');
 
-```bash
-pnpm run dev
+const config = {
+  resolve: {
+    alias: {
+      lib: path.join(__dirname, 'lib'),
+    },
+  },
+};
+
+module.exports = config;
 ```
 
-Run test cases:
-
-```bash
-pnpm run test
+```sh
+node --import alias-register ./main.js
 ```
 
-Build the module for production:
+#### ESM only loader
 
-```bash
-pnpm run build
+If you only need to add TypeScript support in a Module context, you can use the ESM loader:
+
+##### Node.js v20.6.0 and above
+
+```sh
+node --import alias-register/esm ./main.js
 ```
 
-Enable optional features:
+##### Node.js v20.5.1 and below
 
-```bash
-pnpm run new
+```sh
+node --loader alias-register/esm ./main.js
 ```
 
-Other commands:
+#### CommonJS only loader
 
-```bash
-pnpm run lint         # Lint and fix source files
-pnpm run change       # Add a new changeset
-pnpm run bump         # Update version and changelog via changeset
-pnpm run release      # Release the package
+If you only need to add TypeScript & ESM support in a CommonJS context, you can use the CJS loader:
+
+```sh
+node --require alias-register/cjs ./main.js
 ```
-
-For more information, see the [Modern.js Module documentation](https://modernjs.dev/module-tools/en).
