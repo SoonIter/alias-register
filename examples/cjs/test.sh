@@ -1,2 +1,2 @@
 #!/bin/sh
-node --loader '../../register.mjs' ./main.js
+node --loader alias-register ./main.js

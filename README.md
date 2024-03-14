@@ -21,8 +21,12 @@ module.exports = config;
 
 ```sh
 node --loader alias-register ./main.js
-# or Node.js v20.6.0 and above
+# or
+NODE_OPTIONS="--loader alias-register" node ./main.js
+
+# if Node.js v20.6.0 and above
 node --import alias-register ./main.js
+NODE_OPTIONS="--import alias-register" node ./main.js
 ```
 
 ### Other Usages
