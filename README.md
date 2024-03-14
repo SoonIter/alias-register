@@ -4,6 +4,8 @@
 
 ## Get Started
 
+say bye to webpack multi-instances ~
+
 ```js
 // alias.config.cjs
 const path = require('path');
