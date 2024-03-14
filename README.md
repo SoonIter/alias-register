@@ -20,8 +20,12 @@ module.exports = config;
 ```
 
 ```sh
+node --loader alias-register ./main.js
+# or Node.js v20.6.0 and above
 node --import alias-register ./main.js
 ```
+
+### Other Usages
 
 #### ESM only loader
 
